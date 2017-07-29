@@ -11,10 +11,5 @@
             "email": "artyom.deryavka@together.com"
         }
     ],
-    "minimum-stability": "dev",
-    "autoload": {
-        "psr-4": {
-          "AdServer\\Engine\\": "src"
-        }
-    }
+    "minimum-stability": "dev"
 }
