@@ -1,13 +1,20 @@
 <?php
 
 
-namespace AdServer\Engine;
+namespace AdServer;
+
+
+use \AdServer\App as App;
 
 
 class Engine
 {
-    public function test()
+    public static function run(array $routesCollection)
     {
-      echo "test";
+        $app = new App();
+        foreach ($routesCollection as $route => $callableControllerAction) {
+            $app->map(['GET', 'POST'], $route, $callableControllerAction);
+        }
+        $app->run();
     }
 }

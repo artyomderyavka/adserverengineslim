@@ -6,7 +6,7 @@
  * Time: 13:44
  */
 
-namespace AdServer\AdServerApp;
+namespace AdServer;
 
 
 use Slim\App as SlimApp;
@@ -14,7 +14,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
 
-class AdServerApp extends SlimApp
+class App extends SlimApp
 {
     /**
      * @param Request $request
