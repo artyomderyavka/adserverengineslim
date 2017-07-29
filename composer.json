@@ -14,7 +14,10 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-          "AdServer\\Engine\\": "src"
+            "AdServer\\" : "src"
         }
-    }
+    },
+    "classmap": [
+        "src"
+    ]
 }
