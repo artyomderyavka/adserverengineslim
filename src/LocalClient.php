@@ -3,24 +3,27 @@
  * Created by PhpStorm.
  * User: Artyom
  * Date: 29.07.2017
- * Time: 13:44
+ * Time: 17:37
  */
 
 namespace AdServer;
 
 
-use Slim\App as SlimApp;
 use Psr\Http\Message\ResponseInterface as ResponseInterface;
-use Slim\Http\Response;
 
 
-class App extends SlimApp
+class LocalClient implements ClientInterface
 {
     /**
-     * @param RequestInterface $request
+     * @param string $method
+     * @param string $path
+     * @param string $query
+     * @param array $headers
+     * @param array $cookies
+     * @param string $bodyContent
      * @return ResponseInterface
      */
-    public function makeLocalRequest(
+    public function callService(
         string $method,
         string $path,
         string $query = '',
@@ -29,15 +32,6 @@ class App extends SlimApp
         string $bodyContent = ''
     ): ResponseInterface
     {
-        $response = new Response();
-        return $this->subRequest(
-            $method,
-            $path,
-            $query,
-            $headers,
-            $cookies,
-            $bodyContent,
-            $response
-        );
+        return Engine::makeLocalRequest($method, $path, $query, $headers, $cookies, $bodyContent);
     }
 }
